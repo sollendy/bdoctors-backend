@@ -55,4 +55,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Typology::class)->withTimestamps();
     }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
+    public function sponsorships(){
+        return $this->belongsToMany(Sponsorship::class)->withTimestamps();
+    }
 }
