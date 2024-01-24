@@ -19,12 +19,12 @@ class ReviewFactory extends Factory
     {
         return [
             'user_id' => 1,
-            'name' => fake()->name(),
-            'lastname' =>fake()->lastName(),
-            'email' => fake()->email(),
-            'text' => fake()->text(),
-            'created_at' => fake()->dateTime(now()),
-            'updated_at' => fake()->dateTime(now())
+            'name' => $this->faker->name(),
+            'lastname' => $this->faker->lastName(),
+            'email' => $this->faker->email(),
+            'text' => $this->faker->text(),
+            'created_at' => $this->faker->dateTime('now'),
+            'updated_at' => $this->faker->dateTime('now')
         ];
     }
 }
