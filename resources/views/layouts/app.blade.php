@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>B-Doctors</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -71,10 +71,13 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <main class="dashboard p-0 d-flex overflow-y-hidden">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>

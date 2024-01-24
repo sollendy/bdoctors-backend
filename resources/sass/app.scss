@@ -1,8 +1,33 @@
+@use './common.scss';
+@use './partials/home.scss';
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
 // Variables
 @import 'variables';
 
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#app {
+    height: 100vh;
+}
+
+.navbar {
+    height: 56px;
+}
+
+#sidebarMenu {
+    height: calc(100vh - 56px);
+}
+
+.dashboard {
+    height:calc(100vh - 56px);
+    overflow-y: scroll;
+}
