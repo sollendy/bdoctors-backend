@@ -16,6 +16,9 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <div id="name-error" class="text-danger py-1 invalid-feedback">
+
+                                </div>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -30,6 +33,9 @@
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                <div id="lastname-error" class="text-danger py-1 invalid-feedback">
+
+                                </div>
 
                                 @error('lastname')
                                     <span class="invalid-feedback" role="alert">
