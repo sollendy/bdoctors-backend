@@ -33,9 +33,34 @@ body {
 #sidebarMenu {
     height: calc(100vh - 56px);
     background-color: $body-bg;
+
+    .nav-link {
+        .ball {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $doc-darker;
+            box-shadow: 4px 4px 0 0 #fff;
+        }
+
+        .ball-reverse {
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $doc-darker;
+            box-shadow: 4px 4px 0 0 #fff;
+            rotate: 270deg;
+        }
+    }
 }
 
 .dashboard {
-    height:calc(100vh - 56px);
+    height: calc(100vh - 56px);
     overflow-y: scroll;
 }
