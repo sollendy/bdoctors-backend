@@ -1,3 +1,6 @@
+@use '../variables' as *;
+
 .home {
     height: calc(100vh - 56px);
+    background-color: $body-bg;
 }

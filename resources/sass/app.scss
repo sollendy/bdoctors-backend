@@ -1,5 +1,7 @@
 @use './common.scss';
 @use './partials/home.scss';
+@use './partials/welcome.scss';
+@use './partials/login.scss';
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
@@ -13,6 +15,10 @@
 body {
     height: 100vh;
     overflow-y: hidden;
+    background: url('../../public/images/bdoctors-welcome.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Nunito', sans-serif;
 }
 
 #app {
@@ -21,10 +27,12 @@ body {
 
 .navbar {
     height: 56px;
+    background-color: $doc-dark;
 }
 
 #sidebarMenu {
     height: calc(100vh - 56px);
+    background-color: $body-bg;
 }
 
 .dashboard {
