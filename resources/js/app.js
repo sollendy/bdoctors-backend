@@ -37,7 +37,7 @@ function checkPassword() {
         registerSwitch = true;
     }
 
-    if (lastnameValue.length > 10) {
+    if (lastnameValue.length > 250) {
         document.getElementById("lastname-error").innerHTML = "Il cognome deve essere al massimo 250 caratteri";
         lastnameInput.classList.add("is-invalid");
         registerSwitch = false;
