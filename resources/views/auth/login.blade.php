@@ -11,6 +11,8 @@
                         @csrf
 
                         <div class="row mb-2 flex-column align-content-center">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Indirizzo Email') }}</label>
+
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror text-light" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email Address">
 
@@ -37,10 +39,11 @@
                         <div class="row mb-3 justify-content-center">
                             <div class="col-md-6 mt-2">
                                 <div class="form-check rounded-1 py-1">
-                                    
+                                
+
                                     <label class="form-check-label text-light px-1 ms-2" for="remember">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        {{ __('Remember Me') }}
+                                        {{ __('Ricordami') }}
                                     </label>
                                 </div>
                             </div>
@@ -50,7 +53,7 @@
                             <div class="col-md-6 login d-flex justify-content-between align-items-center">
                                 @if (Route::has('password.request'))
                                     <a class="btn text-light" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Hai dimenticato la password?') }}
                                     </a>
                                 @endif
                                 <button type="submit" class="btn login fs-6 fw-bold p-2">
