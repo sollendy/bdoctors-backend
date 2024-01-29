@@ -1,0 +1,37 @@
+@use '../variables' as *;
+
+.container.login {
+    .card {
+        background-color: transparent;
+        .card-header {
+            color:$doc-red !important;
+            font-weight: bold;
+        }
+        input {
+            background-color: $doc-dark;
+            &::placeholder {
+                color:aliceblue;
+            }
+        }
+        .form-check {
+            border:1px solid white;
+            background-color: $doc-dark;
+        }
+        .col-md-6.login {
+            .btn.login {
+                border:1px solid white;
+                background-color: $doc-dark; 
+                color:$doc-green !important;
+                transition: all 0.3s ease;
+                &:hover {
+                    color:$doc-violet !important;
+                    background-color: $doc-green !important;
+                }
+            }
+            a {
+                border:1px solid white;
+                background-color: $doc-dark;
+            }
+        }
+    }
+}
