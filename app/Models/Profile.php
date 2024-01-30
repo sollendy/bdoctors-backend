@@ -21,4 +21,7 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function typologies(){
+        return $this->belongsToMany(Typology::class)->withTimestamps();
+    }
 }
