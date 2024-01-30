@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             DoctorTypologySeeder::class,
             StarSeeder::class,
             DoctorStarSeeder::class,
-            ReviewSeeder::class
+            ReviewSeeder::class,
+            SponsorshipSeeder::class
         ]);
     }
 }
