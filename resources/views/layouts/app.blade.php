@@ -71,9 +71,9 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid h-100">
+        <div class="container h-100">
             <div class="row h-100">
-                <main class="dashboard p-0 d-flex overflow-y-hidden">
+                <main class="dashboard mt-4 overflow-y-hidden">
                     @yield('content')
                 </main>
             </div>
