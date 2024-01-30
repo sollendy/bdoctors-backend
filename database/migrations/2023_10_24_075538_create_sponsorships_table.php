@@ -8,22 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('sponsorships', function (Blueprint $table) {
             $table->id();
-            $table->string("name", 10)->unique;
-            $table->decimal("price", 10,2);
-            $table->dateTime("duration");
+            $table->text('name');
+            $table->float('price')->unsigned();
+            $table->time('duration');
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('sponsorships');
     }
