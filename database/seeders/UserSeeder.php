@@ -4,23 +4,31 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use Faker\Generator as Faker;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run(Faker $faker)
     {
-        //
-        User::create(['name' => 'Carmelo', 'lastname' => 'Leone', 'email' => 'carmelo@leone.com', 'password' => Hash::make('password'),]);
-        User::create(['name' => 'Edoardo', 'lastname' => 'Lannino', 'email' => 'edoardo@lannino.com', 'password' => Hash::make('password'),]);
-        User::create(['name' => 'Francesco', 'lastname' => 'Falanga', 'email' => 'francesco@falanga.com', 'password' => Hash::make('password'),]);
-        User::create(['name' => 'Francesco', 'lastname' => 'Trudu', 'email' => 'francesco@trudu.com', 'password' => Hash::make('password'),]);
-        User::create(['name' => 'Luca', 'lastname' => 'Cirigliano', 'email' => 'luca@cirigliano.com', 'password' => Hash::make('password'),]);
-        User::create(['name' => 'Massimiliano', 'lastname' => 'Fanizza', 'email' => 'massimiliano@fanizza.com', 'password' => Hash::make('password'),]);
-        User::create(['name' => 'Massimiliano', 'lastname' => 'Novello', 'email' => 'massimiliano@novello.com', 'password' => Hash::make('password'),]);
+        $usersCount = 20;
+        for ($i = 1; $i <= $usersCount; $i++) {
+            DB::table('users')->insert([
+                'name' => $faker->name,
+                'email' => 'a' . $i . '@a.it',
+                'email_verified_at' => now(),
+                'password' => Hash::make('ciaociao'),
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }

@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Profile;
 
 class Star extends Model
 {
     use HasFactory;
 
-    public function profiles()
+    public function doctors()
     {
-        return $this->belongsToMany(Profile::class)->withTimestamps();
+        return $this->belongsToMany(Doctor::class);
     }
 }

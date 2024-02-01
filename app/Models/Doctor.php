@@ -47,5 +47,4 @@ class Doctor extends Model
         // dd($this->image);
         return $this->photo ? asset('storage/' . $this->photo) : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png";
     }
-
 }

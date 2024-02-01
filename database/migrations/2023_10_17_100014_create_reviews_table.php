@@ -8,24 +8,29 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id")->constrained();
-            $table->string("name", 40);
-            $table->string("lastname", 40);
-            $table->string("email")->unique();
-            $table->string("text", 400);
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->on('doctors')->references('id')->onDelete('cascade');
+            $table->string('name_ui', 30);
+            $table->string('lastname_ui', 30);
+            $table->string('email_ui', 50);
+            $table->text('text', 500);
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('reviews');
     }
