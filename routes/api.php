@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\DoctorController;
+use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/doctors', [DoctorController::class, 'searchBySpecialization']);
 Route::get('/doctor/{doctor}', [DoctorController::class, 'show']);
+Route::post('/messages', [MessageController::class, 'store']);
