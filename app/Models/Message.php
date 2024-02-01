@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Message extends Model
 {
     use HasFactory;
-    protected $fillable = ["user_id", "name", "lastname", "text"];
-
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-
+    protected $fillable = [
+        'doctor_id',
+        'name_ui',
+        'lastname_ui',
+        'email_ui',
+        'text'
+    ];
+    
     public function doctors()
     {
         return $this->belongsTo(Doctor::class);

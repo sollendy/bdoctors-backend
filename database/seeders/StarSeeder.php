@@ -2,16 +2,19 @@
 
 namespace Database\Seeders;
 
+use App\Models\Star;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Star;
+
 
 class StarSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
         $stars = ['1', '2', '3', '4', '5'];
 

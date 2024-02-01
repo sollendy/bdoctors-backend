@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Profile;
 
 class Star extends Model
 {
@@ -14,7 +13,12 @@ class Star extends Model
         'vote',
 
     ];
+
+    public function doctors()
+    {
+        return $this->belongsToMany(Doctor::class);
     
+    }
     public function profiles()
     {
         return $this->belongsToMany(Profile::class, 'profile_star')->withTimestamps();

@@ -8,29 +8,32 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->on('users')->references('id')->onDelete('cascade');
-            $table->string('slug');
-            $table->text('description')->nullable();
-            $table->string('photo', 255)->nullable();
-            $table->string('phone_number', 50)->nullable();
-            $table->text('services')->nullable();
-
+            $table->text('address', 255);
+            $table->text('description', 500);
+            $table->text('services', 500);
+            $table->text('photo', 255)->nullable();
+            $table->boolean('visible')->default(true);
+            $table->string('slug', 30)->unique();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('doctors');
     }
 };
