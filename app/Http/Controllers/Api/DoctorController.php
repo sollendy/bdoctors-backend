@@ -8,19 +8,22 @@ use App\Models\User;
 
 class DoctorController extends Controller
 {
+    private function getAverageVote($doctor)
+    {
+        $doctor->load('stars');
+        $averageVote = optional($doctor->stars)->avg('vote');
+        return round($averageVote, 2);
+    }
+
     public function searchBySpecialization()
 {
     $doctors = Doctor::with(['typologies', 'reviews'])
         ->get();
-
     $doctors->load('stars');
 
     $doctors->each(function ($doctor) {
-        $averageVote = optional($doctor->stars)->avg('vote');
-        $roundedAverageVote = round($averageVote, 2);
-        $doctor->setAttribute('average_vote', $roundedAverageVote);
-    });
-
+            $doctor->setAttribute('average_vote', $this->getAverageVote($doctor));
+        });
     return response()->json([
         'success' => true,
         'response' => $doctors
@@ -29,12 +32,11 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor){
         $doctorWithReviewsAndStars = $doctor->load('reviews', 'stars');
-        $averageVote = $doctor->stars->avg('vote');
-        $roundedAverageVote = round($averageVote, 2);
+        $averageVote = $this->getAverageVote($doctor);
         return response()->json([
             'success' => true,
             'response' => $doctorWithReviewsAndStars,
-            'average_vote' => $roundedAverageVote,
+            'average_vote' => $averageVote,
         ]);
     }
 }
