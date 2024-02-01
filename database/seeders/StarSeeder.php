@@ -6,6 +6,7 @@ use App\Models\Star;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class StarSeeder extends Seeder
 {
     /**
@@ -17,9 +18,10 @@ class StarSeeder extends Seeder
     {
         $stars = ['1', '2', '3', '4', '5'];
 
-        for ($i = 0; $i < count($stars); $i++) {
+        foreach ($stars as $star) {
+
             $newStar = new Star();
-            $newStar->vote = $stars[$i];
+            $newStar->vote = $star;
             $newStar->save();
         }
     }

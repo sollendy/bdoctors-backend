@@ -4,7 +4,8 @@ use App\Http\Controllers\Api\DoctorController;
 use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\StarController;
+use App\Http\Controllers\Api\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/doctors', [DoctorController::class, 'searchBySpecialization']);
 Route::get('/doctor/{doctor}', [DoctorController::class, 'show']);
 Route::post('/messages', [MessageController::class, 'store']);
+
+Route::post('/doctors/{id}/stars', [StarController::class, 'store']);
+
+Route::post('/reviews', [ReviewController::class, 'store']);

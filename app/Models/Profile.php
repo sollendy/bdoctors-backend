@@ -24,4 +24,9 @@ class Profile extends Model
     public function typologies(){
         return $this->belongsToMany(Typology::class)->withTimestamps();
     }
+
+    public function stars()
+{
+    return $this->belongsToMany(Star::class, 'profile_star')->withTimestamps();
+}
 }
