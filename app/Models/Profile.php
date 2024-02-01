@@ -21,4 +21,9 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function stars()
+{
+    return $this->belongsToMany(Star::class, 'profile_star')->withTimestamps();
+}
 }

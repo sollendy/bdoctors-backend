@@ -14,11 +14,11 @@ class ReviewController extends Controller
         $validatedData = $request->all();
 
         $validator = Validator::make($validatedData, [
-            'user_id' => 'nullable',
+            'user_id' => 'required',
             'name' => 'nullable|max:50',
             'lastname' => 'nullable|max:50',
-            'email' => 'nullable',
-            'text' => 'nullable',
+            'email' => 'required',
+            'text' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -39,6 +39,4 @@ class ReviewController extends Controller
             ]
         );
     }
-
-    
 }
