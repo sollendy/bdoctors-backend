@@ -10,6 +10,11 @@ class Star extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'vote',
+
+    ];
+    
     public function profiles()
     {
         return $this->belongsToMany(Profile::class)->withTimestamps();

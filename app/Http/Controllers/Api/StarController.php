@@ -9,21 +9,23 @@ use App\Models\Star;
 
 class StarController extends Controller
 {
+    
     public function store(Request $request, $id)
-    {
+    {   
+
+        $request->validate([
+            'star_id' => ['required'],
+            'profile_id'=> ['required']
+        ]);
+        
         $doctor = Profile::findOrFail($id);
-        $star= Star::findOrFail($request->input('star_id'));
+        $star = Star::findOrFail($request->input('star_id'));
 
+        $doctor->stars()->attach($star, ['created_at' => date('Y-m-d')]);
 
-        $doctor->stars()->attach($star, ['date' => date('Y-m-d')]);
-
-
-        return response()->json(
-            [
-                'success' => true,
-            ]
-        );
-
+        return response()->json([
+            'success' => true,
+        ]);
     }
 }
 
