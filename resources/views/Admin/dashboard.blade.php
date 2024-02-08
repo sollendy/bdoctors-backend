@@ -50,11 +50,17 @@
                 </tr>
             </tbody>
         </table>
+        <button type="button" class="btn btn-light"><a href="{{ route('admin.reviews') }}">Vedi Recensioni</a></button>
+        <button type="button" class="btn btn-light"><a href="{{ route('admin.messages') }}">Vedi Messaggi</a></button>
+
     </div>
-@else
+    @else
+        <div class="container d-flex flex-column align-items-center">
+            <h1>You Have No Profile</h1>
+            <a class="btn btn-primary mt-3" href="{{ route('admin.doctors.create') }}">Create Profile</a>
+        </div>
+    @endif
+
     <div class="container d-flex flex-column align-items-center">
-        <h1>You Have No Profile</h1>
-        <a class="btn btn-primary mt-3" href="{{ route('admin.doctors.create') }}">Create Profile</a>
     </div>
-@endif
 @endsection
