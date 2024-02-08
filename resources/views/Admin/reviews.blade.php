@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="p-3">
-        <h1>I tuoi messaggi</h1>
+        <h1>Le tue recensioni</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -15,23 +16,22 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($messages as $message)
+                @foreach ($reviews as $key => $review)
                     <tr>
-                        <th scope="row">{{ $message->id }}</th>
-                        <td class="text-dark">{{ $message->name_ui }}</td>
-                        <td>{{ $message->lastname_ui }}</td>
-                        <td>{{ $message->email_ui }}</td>
-                        <td>{{ $message->text }}</td>
+                        <th scope="row">{{ $key + 1 }}</th>
+                        <td>{{ $review->name_ui }}</td>
+                        <td>{{ $review->lastname_ui }}</td>
+                        <td>{{ $review->email_ui }}</td>
+                        <td>{{ $review->text }}</td>
                         <td>
-                            @if ($message->created_at)
-                                {{ $message->created_at->format('M d, Y') }}
+                            @if ($review->created_at)
+                                {{ $review->created_at->format('M d, Y') }}
                             @else
                                 No date available
                             @endif
                         </td>
                     </tr>
                 @endforeach
-
             </tbody>
         </table>
         <button type="button" class="btn btn-light"><a href="{{ url('/admin') }}">Torna indietro</a></button>
