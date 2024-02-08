@@ -57,4 +57,10 @@
         <a class="btn btn-primary mt-3" href="{{ route('admin.doctors.create') }}">Create Profile</a>
     </div>
 @endif
+
+<div class="container d-flex flex-column align-items-center">
+
+    <a href="">Vedi Recensioni</a>
+    <a href="">Vedi Messaggi</a>
+</div>
 @endsection
