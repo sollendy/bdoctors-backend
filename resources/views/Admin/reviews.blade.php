@@ -33,6 +33,6 @@
                 @endforeach
             </tbody>
         </table>
-        <button type="button" class="btn btn-light"><a href="{{ url('/admin') }}">Torna indietro</a></button>
+        <button type="button" class="btn btn-primary"><a class="text-decoration-none text-black" href="{{ url('/admin') }}">Torna indietro</a></button>
     </div>
 @endsection
