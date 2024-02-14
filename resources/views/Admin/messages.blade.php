@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="p-3">
-        <h1>I tuoi messaggi</h1>
+        <h1 class="rounded-pill bg-warning-subtle p-2 text-center">I tuoi messaggi</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -34,6 +34,6 @@
 
             </tbody>
         </table>
-        <button type="button" class="btn btn-light"><a href="{{ url('/admin') }}">Torna indietro</a></button>
+        <button type="button" class="btn btn-primary"><a class="text-decoration-none text-black" href="{{ url('/admin') }}">Torna indietro</a></button>
     </div>
 @endsection

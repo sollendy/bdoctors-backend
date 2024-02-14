@@ -36,7 +36,7 @@
         </div>
         @endif
     </div>
-    <div class="banner fs-4 ms-3">
+    <div class="banner fs-4 ms-3 col-4">
         <span>Register your profile with</span>
         <h1 class="title">B-Doctors</h1>
         <span>to gain the visibility you need</span>
