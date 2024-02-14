@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="p-3">
-        <h1>I tuoi messaggi</h1>
+        <h1 class="rounded-pill bg-warning-subtle p-2 text-center">I tuoi messaggi</h1>
         <table class="table table-striped">
             <thead>
                 <tr>

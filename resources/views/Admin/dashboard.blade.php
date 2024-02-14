@@ -4,7 +4,7 @@
     @if ($doctor)
         <div class="container">
             <div class="title d-flex justify-content-between align-items-center">
-                <h2>Your Profile</h2>
+                <h2 class="rounded-pill bg-light p-2">Your Profile</h2>
             </div>
             <table class="table table-striped">
                 <thead>
@@ -54,13 +54,13 @@
         <button type="button" class="btn btn-light"><a href="{{ route('admin.messages') }}">Vedi Messaggi</a></button>
 
     </div>
-    @else
-        <div class="container d-flex flex-column align-items-center">
-            <h1>You Have No Profile</h1>
-            <a class="btn btn-primary mt-3" href="{{ route('admin.doctors.create') }}">Create Profile</a>
-        </div>
-    @endif
-
+@else
     <div class="container d-flex flex-column align-items-center">
+        <h1>You Have No Profile</h1>
+        <a class="btn btn-primary mt-3" href="{{ route('admin.doctors.create') }}">Create Profile</a>
     </div>
+@endif
+
+<div class="container d-flex flex-column align-items-center">
+</div>
 @endsection
